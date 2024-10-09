@@ -28,6 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
     doughe11: 'https://i.imgur.com/qZDcN59.png',
     doughe12: 'https://i.imgur.com/SUcMQqJ.png',
     doughe13: 'https://i.imgur.com/IVCQzoY.png',
+    doughe14: 'https://i.imgur.com/DLbFraq.png',
     hat1: 'https://i.imgur.com/ZSsIGMh.png',
     hat2: 'https://i.imgur.com/feBcp0K.png',
     hat3: 'https://i.imgur.com/jlq11dE.png',
