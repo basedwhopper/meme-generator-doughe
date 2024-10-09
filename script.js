@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
     hat4: 'https://i.imgur.com/CUNjqvD.png',
     hat5: 'https://i.imgur.com/WCiKIwU.png',
     hat6: 'https://i.imgur.com/ZfDUKuF.png',
-    hat7: 'https://i.imgur.com/MnJkPoQ.png'
+    hat7: 'https://i.imgur.com/iltGUGF.png'
   };
 
   baseImageUpload.addEventListener('change', handleImageUpload);
