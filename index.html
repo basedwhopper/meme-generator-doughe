@@ -19,9 +19,30 @@
         .controls {
             margin-bottom: 20px;
         }
-        input, select, button {
+        input, button {
             margin: 5px;
             padding: 5px;
+        }
+        .overlay-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+            max-width: 500px;
+        }
+        .overlay-option {
+            width: 80px;
+            height: 80px;
+            border: 1px solid #ccc;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        .overlay-option img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
         }
     </style>
 </head>
@@ -30,38 +51,15 @@
     
     <div class="controls">
         <input type="file" id="baseImageUpload" accept="image/*">
-        <select id="overlaySelect">
-            <option value="">Select Overlay</option>
-            <option value="doughe">Doughe</option>
-            <option value="doughe1">Doughe 1</option>
-            <option value="doughe2">Doughe 2</option>
-            <option value="doughe3">Doughe 3</option>
-            <option value="doughe4">Doughe 4</option>
-            <option value="doughe5">Doughe 5</option>
-            <option value="doughe6">Doughe 6</option>
-            <option value="doughe7">Doughe 7</option>
-            <option value="doughe8">Doughe 8</option>
-            <option value="doughe9">Doughe 9</option>
-            <option value="doughe10">Doughe 10</option>
-            <option value="doughe11">Doughe 11</option>
-            <option value="doughe12">Doughe 12</option>
-            <option value="doughe13">Doughe 13</option>
-            <option value="doughe14">Doughe 14</option>
-            <option value="doughe15">Doughe 15</option>
-            <option value="hat1">Hat 1</option>
-            <option value="hat2">Hat 2</option>
-            <option value="hat3">Hat 3</option>
-            <option value="hat4">Hat 4</option>
-            <option value="hat5">Hat 5</option>
-            <option value="hat6">Hat 6</option>
-            <option value="hat7">Hat 7</option>
-        </select>
         <button id="exportButton">Export Meme</button>
+        <button id="resetButton">Reset</button>
     </div>
+
+    <div class="overlay-grid" id="overlayGrid"></div>
 
     <canvas id="canvas" width="500" height="500"></canvas>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.3.1/fabric.min.js"></script>
-    <script src="script.js"></script>
+    <script src="script.js?v=1.0.3"></script>
 </body>
 </html>
