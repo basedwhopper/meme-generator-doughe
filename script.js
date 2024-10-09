@@ -29,13 +29,14 @@ document.addEventListener('DOMContentLoaded', function() {
     doughe12: 'https://i.imgur.com/SUcMQqJ.png',
     doughe13: 'https://i.imgur.com/IVCQzoY.png',
     doughe14: 'https://i.imgur.com/DLbFraq.png',
+    doughe15: 'https://i.imgur.com/b2bGWfT.png',
     hat1: 'https://i.imgur.com/ZSsIGMh.png',
     hat2: 'https://i.imgur.com/feBcp0K.png',
     hat3: 'https://i.imgur.com/jlq11dE.png',
     hat4: 'https://i.imgur.com/CUNjqvD.png',
     hat5: 'https://i.imgur.com/WCiKIwU.png',
     hat6: 'https://i.imgur.com/ZfDUKuF.png',
-    hat7: 'https://i.imgur.com/iltGUGF.png'
+    hat7: 'https://i.imgur.com/MnJkPoQ.png'
   };
 
   baseImageUpload.addEventListener('change', handleImageUpload);
