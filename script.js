@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const exportButton = document.getElementById('exportButton');
 
   const overlayImages = {
-    doughe: 'https://i.imgur.com/LAK8ska.png'
+    doughe: 'https://i.imgur.com/FY7cOpI.png'
   };
 
   baseImageUpload.addEventListener('change', handleImageUpload);
