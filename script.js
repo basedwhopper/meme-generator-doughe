@@ -5,13 +5,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
   const canvas = new fabric.Canvas('canvas', {
     width: 500,
-    height: 500
+    height: 500,
+    selection: true,
+    interactive: true
   });
   console.log('Canvas initialized');
 
   const baseImageUpload = document.getElementById('baseImageUpload');
-  const overlaySelect = document.getElementById('overlaySelect');
   const exportButton = document.getElementById('exportButton');
+  const resetButton = document.getElementById('resetButton');
+  const overlayGrid = document.getElementById('overlayGrid');
 
   const overlayImages = {
     doughe: 'https://i.imgur.com/FY7cOpI.png',
@@ -39,9 +42,18 @@ document.addEventListener('DOMContentLoaded', function() {
     hat7: 'https://i.imgur.com/MnJkPoQ.png'
   };
 
+  // Create overlay grid
+  for (const [key, url] of Object.entries(overlayImages)) {
+    const overlayOption = document.createElement('div');
+    overlayOption.className = 'overlay-option';
+    overlayOption.innerHTML = `<img src="${url}" alt="${key}">`;
+    overlayOption.addEventListener('click', () => addOverlay(url));
+    overlayGrid.appendChild(overlayOption);
+  }
+
   baseImageUpload.addEventListener('change', handleImageUpload);
-  overlaySelect.addEventListener('change', handleOverlaySelect);
   exportButton.addEventListener('click', exportImage);
+  resetButton.addEventListener('click', resetCanvas);
 
   function handleImageUpload(e) {
     console.log('Image upload triggered');
@@ -60,19 +72,20 @@ document.addEventListener('DOMContentLoaded', function() {
     reader.readAsDataURL(file);
   }
 
-  function handleOverlaySelect(e) {
-    console.log('Overlay select triggered');
-    const selectedOverlay = e.target.value;
-    if (selectedOverlay && overlayImages[selectedOverlay]) {
-      addOverlay(overlayImages[selectedOverlay]);
-    }
-  }
-
   function addOverlay(url) {
     console.log('Adding overlay:', url);
     fabric.Image.fromURL(url, function(img) {
       img.scaleToWidth(canvas.width / 2);
+      img.set({
+        left: canvas.width / 4,
+        top: canvas.height / 4,
+        selectable: true,
+        evented: true,
+        hasControls: true,
+        hasBorders: true
+      });
       canvas.add(img);
+      canvas.setActiveObject(img);
       canvas.renderAll();
     }, { crossOrigin: 'anonymous' });
   }
@@ -88,6 +101,16 @@ document.addEventListener('DOMContentLoaded', function() {
     link.href = dataURL;
     link.download = 'meme.png';
     link.click();
+  }
+
+  function resetCanvas() {
+    console.log('Reset canvas triggered');
+    canvas.getObjects().forEach((obj) => {
+      if (obj !== canvas.backgroundImage) {
+        canvas.remove(obj);
+      }
+    });
+    canvas.renderAll();
   }
 
   console.log('All event listeners set up');
