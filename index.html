@@ -1,7 +1,51 @@
-<canvas id="canvas"></canvas>
-<input type="file" id="baseImageUpload" accept="image/*">
-<select id="overlaySelect">
-  <option value="">Select an overlay</option>
-  <option value="doughe">Doughe</option>
-</select>
-<button id="exportButton">Export Image</button>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doughe Meme Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        #canvas {
+            border: 1px solid #ccc;
+            margin-top: 20px;
+        }
+        .controls {
+            margin-bottom: 20px;
+        }
+        input, select, button {
+            margin: 5px;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Doughe Meme Generator</h1>
+    
+    <div class="controls">
+        <input type="file" id="baseImageUpload" accept="image/*">
+        <select id="overlaySelect">
+            <option value="">Select Overlay</option>
+            <option value="doughe">Doughe</option>
+        </select>
+        <button id="exportButton">Export Meme</button>
+    </div>
+
+    <canvas id="canvas" width="500" height="500"></canvas>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.3.1/fabric.min.js"></script>
+    <script>
+        console.log('Inline script start');
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('DOM fully loaded');
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
