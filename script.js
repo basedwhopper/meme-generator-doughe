@@ -14,7 +14,20 @@ document.addEventListener('DOMContentLoaded', function() {
   const exportButton = document.getElementById('exportButton');
 
   const overlayImages = {
-    doughe: 'https://i.imgur.com/FY7cOpI.png'
+    doughe: 'https://i.imgur.com/FY7cOpI.png',
+    doughe1: 'https://i.imgur.com/6rUrlWH.png',
+    doughe2: 'https://i.imgur.com/VXseKef.png',
+    doughe3: 'https://i.imgur.com/iETCfEE.png',
+    doughe4: 'https://i.imgur.com/qHHd1HY.png',
+    doughe5: 'https://i.imgur.com/9H1tCgF.png',
+    doughe6: 'https://i.imgur.com/tp6QUck.png',
+    doughe7: 'https://i.imgur.com/HWNlWNp.png',
+    doughe8: 'https://i.imgur.com/1Dj0bu7.png',
+    doughe9: 'https://i.imgur.com/GLxvu7Z.png',
+    doughe10: 'https://i.imgur.com/bV9zIjG.png',
+    doughe11: 'https://i.imgur.com/qZDcN59.png',
+    doughe12: 'https://i.imgur.com/SUcMQqJ.png',
+    doughe13: 'https://i.imgur.com/IVCQzoY.png'
   };
 
   baseImageUpload.addEventListener('change', handleImageUpload);
