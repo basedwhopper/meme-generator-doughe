@@ -1,23 +1,17 @@
-console.log('script.js loaded');
+console.log('Script loaded');
 
 document.addEventListener('DOMContentLoaded', function() {
-  console.log('DOM fully loaded');
+  console.log('DOM loaded');
 
   const canvas = new fabric.Canvas('canvas', {
     width: 500,
     height: 500
   });
-  console.log('Fabric canvas initialized:', canvas);
+  console.log('Canvas initialized');
 
   const baseImageUpload = document.getElementById('baseImageUpload');
   const overlaySelect = document.getElementById('overlaySelect');
   const exportButton = document.getElementById('exportButton');
-
-  console.log('DOM elements found:', {
-    baseImageUpload: !!baseImageUpload,
-    overlaySelect: !!overlaySelect,
-    exportButton: !!exportButton
-  });
 
   const overlayImages = {
     doughe: 'https://i.imgur.com/LAK8ska.png'
@@ -28,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
   exportButton.addEventListener('click', exportImage);
 
   function handleImageUpload(e) {
-    console.log('Base image upload triggered');
+    console.log('Image upload triggered');
     const file = e.target.files[0];
     const reader = new FileReader();
 
@@ -45,9 +39,9 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   function handleOverlaySelect(e) {
-    console.log('Overlay select triggered:', e.target.value);
+    console.log('Overlay select triggered');
     const selectedOverlay = e.target.value;
-    if (selectedOverlay) {
+    if (selectedOverlay && overlayImages[selectedOverlay]) {
       addOverlay(overlayImages[selectedOverlay]);
     }
   }
@@ -58,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
       img.scaleToWidth(canvas.width / 2);
       canvas.add(img);
       canvas.renderAll();
-    });
+    }, { crossOrigin: 'anonymous' });
   }
 
   function exportImage() {
@@ -73,6 +67,6 @@ document.addEventListener('DOMContentLoaded', function() {
     link.download = 'meme.png';
     link.click();
   }
-});
 
-console.log('End of script.js');
+  console.log('All event listeners set up');
+});
